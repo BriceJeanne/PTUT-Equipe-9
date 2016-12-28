@@ -29,6 +29,13 @@ void setup() {
   digitalWrite(redPin, HIGH);
   digitalWrite(greenPin, HIGH);
   digitalWrite(bluePin, HIGH);
+  
+  /* Met les broches des boutons en entrees avec pull-up */
+  pinMode(PIN_BUTTON_A, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_B, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_C, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_D, INPUT_PULLUP);
+
 }
 
 void loop() {
