@@ -19,6 +19,11 @@ const char* CMD_BUTTON_D = "BPD";
 
 void setup() {
   Serial.begin(9600);
+
+  /* Met les broches des LEDs en sortie*/
+  pinMode(redPin, OUTPUT); //Patte 4 reliee a la cathode de la LED rouge
+  pinMode(greenPin, OUTPUT); //Patte 3 reliee a la cathode de la LED vert
+  pinMode(bluePin, OUTPUT); //Patte 2 reliee a la cathode de la LED bleu
 }
 
 void loop() {
