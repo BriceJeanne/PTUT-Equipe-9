@@ -30,6 +30,11 @@ String printString;
 
 void setup() {
   Serial.begin(9600);
+  
+  /* Met les broches des LEDs en sortie*/
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
 }
 
 void loop() {
