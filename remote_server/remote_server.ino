@@ -25,6 +25,9 @@ const char* CMD_BUTTON_B = "BPB";
 const char* CMD_BUTTON_C = "BPC";
 const char* CMD_BUTTON_D = "BPD";
 
+/* Declaration d'une chaine d'affichage*/
+String printString;
+
 void setup() {
   Serial.begin(9600);
 }
