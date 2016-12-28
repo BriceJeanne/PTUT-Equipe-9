@@ -44,6 +44,11 @@ void setup() {
   /* Met les broches des boutons en entrees avec pull-up */
   pinMode(PIN_BUTTON_Deb, INPUT_PULLUP);
   pinMode(PIN_BUTTON_Fin, INPUT_PULLUP);
+  
+  // Initialisation de la bibliothèque VirtualWire
+  // Vous pouvez changez les broches RX/TX/PTT avant vw_setup() si nécessaire
+  vw_setup(2000);
+  vw_rx_start(); // On peut maintenant recevoir des messages
 }
 
 void loop() {
