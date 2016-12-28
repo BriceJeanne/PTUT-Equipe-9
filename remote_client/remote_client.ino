@@ -36,6 +36,9 @@ void setup() {
   pinMode(PIN_BUTTON_C, INPUT_PULLUP);
   pinMode(PIN_BUTTON_D, INPUT_PULLUP);
 
+  // Initialisation de la bibliotheque VirtualWire
+  // Vous pouvez changez les broches RX/TX/PTT avant vw_setup() si necessaire
+  vw_setup(2000);
 }
 
 void loop() {
