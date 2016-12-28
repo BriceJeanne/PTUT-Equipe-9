@@ -19,6 +19,26 @@ const char* CMD_BUTTON_D = "BPD";
 
 void setup() {
   Serial.begin(9600);
+
+  /* Met les broches des LEDs en sortie*/
+  pinMode(redPin, OUTPUT); //Patte 4 reliee a la cathode de la LED rouge
+  pinMode(greenPin, OUTPUT); //Patte 3 reliee a la cathode de la LED vert
+  pinMode(bluePin, OUTPUT); //Patte 2 reliee a la cathode de la LED bleu 
+  
+  /* Eteint la LED par defaut*/
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+  
+  /* Met les broches des boutons en entrees avec pull-up */
+  pinMode(PIN_BUTTON_A, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_B, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_C, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_D, INPUT_PULLUP);
+
+  // Initialisation de la bibliotheque VirtualWire
+  // Vous pouvez changez les broches RX/TX/PTT avant vw_setup() si necessaire
+  vw_setup(2000);
 }
 
 void loop() {

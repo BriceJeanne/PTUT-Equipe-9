@@ -30,6 +30,25 @@ String printString;
 
 void setup() {
   Serial.begin(9600);
+  
+  /* Met les broches des LEDs en sortie*/
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+    
+  /* Eteint la LED par defaut*/
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+  
+  /* Met les broches des boutons en entrees avec pull-up */
+  pinMode(PIN_BUTTON_Deb, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_Fin, INPUT_PULLUP);
+  
+  // Initialisation de la bibliothèque VirtualWire
+  // Vous pouvez changez les broches RX/TX/PTT avant vw_setup() si nécessaire
+  vw_setup(2000);
+  vw_rx_start(); // On peut maintenant recevoir des messages
 }
 
 void loop() {
