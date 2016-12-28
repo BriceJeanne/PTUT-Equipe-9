@@ -23,7 +23,12 @@ void setup() {
   /* Met les broches des LEDs en sortie*/
   pinMode(redPin, OUTPUT); //Patte 4 reliee a la cathode de la LED rouge
   pinMode(greenPin, OUTPUT); //Patte 3 reliee a la cathode de la LED vert
-  pinMode(bluePin, OUTPUT); //Patte 2 reliee a la cathode de la LED bleu
+  pinMode(bluePin, OUTPUT); //Patte 2 reliee a la cathode de la LED bleu 
+  
+  /* Eteint la LED par defaut*/
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
 }
 
 void loop() {
