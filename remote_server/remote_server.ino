@@ -1,5 +1,8 @@
 #include <VirtualWire.h>
 
+/* Declare le nombre de reponse dans la session*/
+int nbQuestion = 4;
+
 /* Broches pour la LED RGB */ 
 int redPin = 4;
 int greenPin = 3;
