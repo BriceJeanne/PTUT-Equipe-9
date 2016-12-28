@@ -1,5 +1,12 @@
 #include <VirtualWire.h>
 
+/* Declare les compteurs total de reponse*/
+int cptTA = 0;
+int cptTB = 0;
+int cptTC = 0;
+int cptTD = 0;
+int cptTAny = 0;
+
 /* Declare le nombre de question dans la session*/
 int nbQuestion = 4;
 
