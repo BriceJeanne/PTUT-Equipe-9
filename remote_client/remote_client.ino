@@ -11,6 +11,12 @@ const byte PIN_BUTTON_B = 6;
 const byte PIN_BUTTON_C = 7;
 const byte PIN_BUTTON_D = 8;
 
+/* DiffÃ©rents messages de commande */
+const char* CMD_BUTTON_A = "BPA";
+const char* CMD_BUTTON_B = "BPB";
+const char* CMD_BUTTON_C = "BPC";
+const char* CMD_BUTTON_D = "BPD";
+
 void setup() {
   Serial.begin(9600);
 }
