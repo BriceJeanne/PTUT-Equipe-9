@@ -119,3 +119,9 @@ void setColorJaune() {
   digitalWrite(greenPin, LOW);
   digitalWrite(bluePin, HIGH);
 }
+
+void ColorReset() {
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+}
