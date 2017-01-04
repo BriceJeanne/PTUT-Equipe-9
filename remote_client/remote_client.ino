@@ -82,3 +82,11 @@ void loop() {
     delay(50);
   }
 }
+
+/* Colore la LED RGB avec les valeurs passÃ©e en paramÃ¨tre*/
+void setColorRouge() {
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+}
+
