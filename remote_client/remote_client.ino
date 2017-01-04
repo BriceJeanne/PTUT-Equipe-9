@@ -91,7 +91,7 @@ void loop() {
   }
 }
 
-/* Colore la LED RGB avec les valeurs passÃ©e en paramÃ¨tre*/
+/* Colore la LED RGB avec les valeurs passee en parametre*/
 void setColorRouge() {
   digitalWrite(redPin, LOW);
   digitalWrite(greenPin, HIGH);
