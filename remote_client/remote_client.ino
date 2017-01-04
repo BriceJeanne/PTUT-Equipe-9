@@ -95,3 +95,9 @@ void setColorVert() {
   digitalWrite(greenPin, LOW);
   digitalWrite(bluePin, HIGH);
 }
+
+void setColorBleu() {
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, LOW);
+}
