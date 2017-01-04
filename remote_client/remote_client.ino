@@ -42,4 +42,43 @@ void setup() {
 }
 
 void loop() {
+  byte message[VW_MAX_MESSAGE_LEN];
+  // N.B. La constante VW_MAX_MESSAGE_LEN est fournie par la lib VirtualWire
+
+  /* Envoi la commande adequate */
+  if (digitalRead(PIN_BUTTON_A) == LOW) {
+    vw_send((byte*) CMD_BUTTON_A, strlen(CMD_BUTTON_A) + 1); // On envoie le message
+    vw_wait_tx(); // On attend la fin de l'envoi
+
+    delay(50); // Attend que le bouton soit relache
+    while (digitalRead(PIN_BUTTON_A) == LOW);
+    delay(50);
+  }
+
+  else if (digitalRead(PIN_BUTTON_B) == LOW) {
+    vw_send((byte*) CMD_BUTTON_B, strlen(CMD_BUTTON_B) + 1); // On envoie le message
+    vw_wait_tx(); // On attend la fin de l'envoi
+
+    delay(50); // Attend que le bouton soit relache
+    while (digitalRead(PIN_BUTTON_B) == LOW);
+    delay(50);
+  }
+
+  else if (digitalRead(PIN_BUTTON_C) == LOW) {
+    vw_send((byte*) CMD_BUTTON_C, strlen(CMD_BUTTON_C) + 1); // On envoie le message
+    vw_wait_tx(); // On attend la fin de l'envoi
+
+    delay(50); // Attend que le bouton soit relache
+    while (digitalRead(PIN_BUTTON_C) == LOW);
+    delay(50);
+  }
+
+  else if (digitalRead(PIN_BUTTON_D) == LOW) {
+    vw_send((byte*) CMD_BUTTON_D, strlen(CMD_BUTTON_D) + 1); // On envoie le message
+    vw_wait_tx(); // On attend la fin de l'envoi
+
+    delay(50); // Attend que le bouton soit relache
+    while (digitalRead(PIN_BUTTON_D) == LOW);
+    delay(50);
+  }
 }
