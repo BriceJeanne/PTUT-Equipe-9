@@ -74,11 +74,19 @@ void loop() {
       cptA = cptA++;
       delay(500);
       
-    } else if (strcmp((char*) message, CMD_BUTTON_B) == 0) {
+    } 
+    
+    else if (strcmp((char*) message, CMD_BUTTON_B) == 0) {
       Serial.println("TOGGLE LED B");
       cptB = cptB++;
       delay(500);
     }
+    
+    else if (strcmp((char*) message, CMD_BUTTON_C) == 0) {
+      Serial.println("TOGGLE LED C");
+      cptC = cptC++;
+      delay(500);
+    } 
   }
   
 }
