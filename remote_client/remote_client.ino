@@ -42,4 +42,6 @@ void setup() {
 }
 
 void loop() {
+  byte message[VW_MAX_MESSAGE_LEN];
+  // N.B. La constante VW_MAX_MESSAGE_LEN est fournie par la lib VirtualWire
 }
