@@ -133,3 +133,18 @@ void ColorReset() {
   digitalWrite(greenPin, HIGH);
   digitalWrite(bluePin, HIGH);
 }
+
+/* Petite fonction d'affichage pour plus de propreté dans le code*/
+void printpercentage()
+{
+  /* Affichage des pourcentages des reponses*/
+  printString = " / ";
+  Serial.print(cptA);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
+  Serial.println("");      // affiche un autre retour de chariot  
+  Serial.print(cptB);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
+  Serial.println("");      // affiche un autre retour de chariot
+  Serial.print(cptC);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
+  Serial.println("");      // affiche un autre retour de chariot
+  Serial.print(cptD);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
+  Serial.println("");      // affiche un autre retour de chariot
+}
