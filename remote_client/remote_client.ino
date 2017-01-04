@@ -54,4 +54,13 @@ void loop() {
     while (digitalRead(PIN_BUTTON_A) == LOW);
     delay(50);
   }
+
+  else if (digitalRead(PIN_BUTTON_B) == LOW) {
+    vw_send((byte*) CMD_BUTTON_B, strlen(CMD_BUTTON_B) + 1); // On envoie le message
+    vw_wait_tx(); // On attend la fin de l'envoi
+
+    delay(50); // Attend que le bouton soit relÃ¢chÃ©
+    while (digitalRead(PIN_BUTTON_B) == LOW);
+    delay(50);
+  }
 }
