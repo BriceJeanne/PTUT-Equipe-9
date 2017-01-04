@@ -78,9 +78,11 @@ void loop() {
     } 
     
     else if (strcmp((char*) message, CMD_BUTTON_B) == 0) {
+      setColorMagenta();
       Serial.println("TOGGLE LED B");
       cptB = cptB++;
       delay(500);
+      ColorReset();
     }
     
     else if (strcmp((char*) message, CMD_BUTTON_C) == 0) {
