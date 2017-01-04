@@ -90,3 +90,8 @@ void setColorRouge() {
   digitalWrite(bluePin, HIGH);
 }
 
+void setColorVert() {
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, HIGH);
+}
