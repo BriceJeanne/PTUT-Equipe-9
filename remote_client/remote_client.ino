@@ -107,3 +107,9 @@ void setColorBlanc() {
   digitalWrite(greenPin, LOW);
   digitalWrite(bluePin, LOW);
 }
+
+void ColorReset() {
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+}
