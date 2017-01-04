@@ -62,6 +62,23 @@ void loop() {
   avoir à réassigner la valeur à chaque début de loop().
   */
 
+  /* Lecture d'une question en entrée et affichage par la suite */
+  while (Serial.available()) {
+    delay(3); /* Attends 3ms que les données arrivent */
+    /* Récupère les données caractère par caractère */
+    if (Serial.available() > 0) {
+      char c = Serial.read();
+      readString += c;
+    }
+  }
+  if(readString.length() > 0) {
+     Serial.println(readString); /* Affiche ce qui a été récupéré */
+     if(readString == "Affichage" || readString == "affichage"){
+        printpercentage();
+     }
+     readString = "";
+  }
+
   /* On attend de recevoir un message */
   vw_wait_rx();
   
