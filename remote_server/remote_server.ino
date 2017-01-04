@@ -69,6 +69,12 @@ void loop() {
   // On copie le message, qu'il soit corrompu ou non
   if (vw_get_message(message, &taille_message)) {
     
+    if (strcmp((char*) message, CMD_BUTTON_A) == 0) {
+      Serial.println("TOGGLE LED A");
+      cptA = cptA++;
+      delay(500);
+      
+    }
   }
   
 }
