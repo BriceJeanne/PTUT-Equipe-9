@@ -69,7 +69,7 @@ void loop() {
   if (vw_get_message(message, &taille_message)) {
     
     if (strcmp((char*) message, CMD_BUTTON_A) == 0) {
-      setColorCyan();
+      setColorRouge();
       Serial.println("TOGGLE LED A");
       cptA = cptA++;
       delay(500);
@@ -78,7 +78,7 @@ void loop() {
     } 
     
     else if (strcmp((char*) message, CMD_BUTTON_B) == 0) {
-      setColorMagenta();
+      setColorVert();
       Serial.println("TOGGLE LED B");
       cptB = cptB++;
       delay(500);
@@ -86,7 +86,7 @@ void loop() {
     }
     
     else if (strcmp((char*) message, CMD_BUTTON_C) == 0) {
-      setColorJaune();
+      setColorBleu();
       Serial.println("TOGGLE LED C");
       cptC = cptC++;
       delay(500);
@@ -94,7 +94,7 @@ void loop() {
     }
 
      else if (strcmp((char*) message, CMD_BUTTON_D) == 0) {
-      setColorBleu();
+      setColorBlanc();
       Serial.println("TOGGLE LED D");
       cptD = cptD++;
       delay(500);
@@ -104,28 +104,28 @@ void loop() {
 }
 
 /* Colore la LED RGB avec les valeurs passee en parametre*/
+void setColorRouge() {
+  digitalWrite(redPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+}
+
+void setColorVert() {
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  digitalWrite(bluePin, HIGH);
+}
+
 void setColorBleu() {
   digitalWrite(redPin, HIGH);
   digitalWrite(greenPin, HIGH);
   digitalWrite(bluePin, LOW);
 }
 
-void setColorCyan() {
-  digitalWrite(redPin, HIGH);
-  digitalWrite(greenPin, LOW);
-  digitalWrite(bluePin, LOW);
-}
-
-void setColorMagenta() {
-  digitalWrite(redPin, LOW);
-  digitalWrite(greenPin, HIGH);
-  digitalWrite(bluePin, LOW);
-}
-
-void setColorJaune() {
+void setColorBlanc() {
   digitalWrite(redPin, LOW);
   digitalWrite(greenPin, LOW);
-  digitalWrite(bluePin, HIGH);
+  digitalWrite(bluePin, LOW);
 }
 
 void ColorReset() {
