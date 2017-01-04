@@ -155,13 +155,12 @@ void resetColor() {
 void printPercentage()
 {
   /* Affichage des pourcentages des reponses*/
-  printString = " / ";
-  Serial.print(cptA);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
-  Serial.println("");      // affiche un autre retour de chariot  
-  Serial.print(cptB);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
+  Serial.print("Reponse A : ");   Serial.print(cptTA);   Serial.print(" / ");  Serial.print(nbQuestion);
   Serial.println("");      // affiche un autre retour de chariot
-  Serial.print(cptC);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
+  Serial.print("Reponse B : ");   Serial.print(cptTB);   Serial.print(" / ");  Serial.print(nbQuestion);
   Serial.println("");      // affiche un autre retour de chariot
-  Serial.print(cptD);   Serial.print(printString);  Serial.print((cptA + cptB + cptC + cptD));
+  Serial.print("Reponse C : ");   Serial.print(cptTC);   Serial.print(" / ");  Serial.print(nbQuestion);
+  Serial.println("");      // affiche un autre retour de chariot
+  Serial.print("Reponse D : ");   Serial.print(cptTD);   Serial.print(" / ");  Serial.print(nbQuestion);
   Serial.println("");      // affiche un autre retour de chariot
 }
