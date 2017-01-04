@@ -47,76 +47,76 @@ void loop() {
 
   /* Envoi la commande adequate */
   if (digitalRead(PIN_BUTTON_A) == LOW) {
-    setColorRouge();
+    setColorRed();
     vw_send((byte*) CMD_BUTTON_A, strlen(CMD_BUTTON_A) + 1); // On envoie le message
     vw_wait_tx(); // On attend la fin de l'envoi
 
     delay(50); // Attend que le bouton soit relache
     while (digitalRead(PIN_BUTTON_A) == LOW);
     delay(50);
-    ColorReset();
+    resetColor();
   }
 
   else if (digitalRead(PIN_BUTTON_B) == LOW) {
-    setColorVert();
+    setColorGreen();
     vw_send((byte*) CMD_BUTTON_B, strlen(CMD_BUTTON_B) + 1); // On envoie le message
     vw_wait_tx(); // On attend la fin de l'envoi
 
     delay(50); // Attend que le bouton soit relache
     while (digitalRead(PIN_BUTTON_B) == LOW);
     delay(50);
-    ColorReset();
+    resetColor();
   }
 
   else if (digitalRead(PIN_BUTTON_C) == LOW) {
-    setColorBleu();
+    setColorBlue();
     vw_send((byte*) CMD_BUTTON_C, strlen(CMD_BUTTON_C) + 1); // On envoie le message
     vw_wait_tx(); // On attend la fin de l'envoi
 
     delay(50); // Attend que le bouton soit relache
     while (digitalRead(PIN_BUTTON_C) == LOW);
     delay(50);
-    ColorReset();
+    resetColor();
   }
 
   else if (digitalRead(PIN_BUTTON_D) == LOW) {
-    setColorBlanc();
+    setColorWhite();
     vw_send((byte*) CMD_BUTTON_D, strlen(CMD_BUTTON_D) + 1); // On envoie le message
     vw_wait_tx(); // On attend la fin de l'envoi
 
     delay(50); // Attend que le bouton soit relache
     while (digitalRead(PIN_BUTTON_D) == LOW);
     delay(50);
-    ColorReset();
+    resetColor();
   }
 }
 
 /* Colore la LED RGB avec les valeurs passee en parametre*/
-void setColorRouge() {
+void setColorRed() {
   digitalWrite(redPin, LOW);
   digitalWrite(greenPin, HIGH);
   digitalWrite(bluePin, HIGH);
 }
 
-void setColorVert() {
+void setColorGreen() {
   digitalWrite(redPin, HIGH);
   digitalWrite(greenPin, LOW);
   digitalWrite(bluePin, HIGH);
 }
 
-void setColorBleu() {
+void setColorBlue() {
   digitalWrite(redPin, HIGH);
   digitalWrite(greenPin, HIGH);
   digitalWrite(bluePin, LOW);
 }
 
-void setColorBlanc() {
+void setColorWhite() {
   digitalWrite(redPin, LOW);
   digitalWrite(greenPin, LOW);
   digitalWrite(bluePin, LOW);
 }
 
-void ColorReset() {
+void resetColor() {
   digitalWrite(redPin, HIGH);
   digitalWrite(greenPin, HIGH);
   digitalWrite(bluePin, HIGH);
