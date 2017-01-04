@@ -92,6 +92,12 @@ void loop() {
       cptD = cptD++;
       delay(500);
     }
-  }
-  
+  } 
+}
+
+/* Colore la LED RGB avec les valeurs passee en parametre*/
+void setColorBleu() {
+  digitalWrite(redPin, HIGH);
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, LOW);
 }
