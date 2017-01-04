@@ -80,12 +80,14 @@ void loop() {
   }
 
   else if (digitalRead(PIN_BUTTON_D) == LOW) {
+    setColorBlanc();
     vw_send((byte*) CMD_BUTTON_D, strlen(CMD_BUTTON_D) + 1); // On envoie le message
     vw_wait_tx(); // On attend la fin de l'envoi
 
     delay(50); // Attend que le bouton soit relache
     while (digitalRead(PIN_BUTTON_D) == LOW);
     delay(50);
+    ColorReset();
   }
 }
 
