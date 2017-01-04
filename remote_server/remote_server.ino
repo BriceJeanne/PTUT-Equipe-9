@@ -1,11 +1,10 @@
 #include <VirtualWire.h>
 
-/* Declare les compteurs total de reponse*/
-int cptTA = 0;
-int cptTB = 0;
-int cptTC = 0;
-int cptTD = 0;
-int cptTAny = 0;
+/* Déclare les compteurs de réponse*/
+int cptA = 0;
+int cptB = 0;
+int cptC = 0;
+int cptD = 0;
 
 /* Declare le nombre de question dans la session*/
 int nbQuestion = 4;
@@ -52,5 +51,47 @@ void setup() {
 }
 
 void loop() {
-	
+	byte message[VW_MAX_MESSAGE_LEN];
+  byte taille_message = VW_MAX_MESSAGE_LEN;
+  /* N.B. La constante VW_MAX_MESSAGE_LEN est fournie par la lib VirtualWire */
+
+  /*
+  La variable "taille_message" doit impérativement être remise à 
+  la taille du buffer avant de pouvoir recevoir un message. 
+  Le plus simple est d'utiliser une variable locale pour ne pas
+  avoir à réassigner la valeur à chaque début de loop().
+  */
+
+  /* On attend de recevoir un message */
+  vw_wait_rx();
+  
+  // On copie le message, qu'il soit corrompu ou non
+  if (vw_get_message(message, &taille_message)) {
+    
+    if (strcmp((char*) message, CMD_BUTTON_A) == 0) {
+      Serial.println("TOGGLE LED A");
+      cptA = cptA++;
+      delay(500);
+      
+    } 
+    
+    else if (strcmp((char*) message, CMD_BUTTON_B) == 0) {
+      Serial.println("TOGGLE LED B");
+      cptB = cptB++;
+      delay(500);
+    }
+    
+    else if (strcmp((char*) message, CMD_BUTTON_C) == 0) {
+      Serial.println("TOGGLE LED C");
+      cptC = cptC++;
+      delay(500);
+    }
+
+     else if (strcmp((char*) message, CMD_BUTTON_D) == 0) {
+      Serial.println("TOGGLE LED D");
+      cptD = cptD++;
+      delay(500);
+    }
+  }
+  
 }
