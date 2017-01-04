@@ -62,4 +62,13 @@ void loop() {
   Le plus simple est d'utiliser une variable locale pour ne pas
   avoir à réassigner la valeur à chaque début de loop().
   */
+
+  /* On attend de recevoir un message */
+  vw_wait_rx();
+  
+  // On copie le message, qu'il soit corrompu ou non
+  if (vw_get_message(message, &taille_message)) {
+    
+  }
+  
 }
