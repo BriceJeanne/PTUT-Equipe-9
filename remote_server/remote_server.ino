@@ -69,9 +69,11 @@ void loop() {
   if (vw_get_message(message, &taille_message)) {
     
     if (strcmp((char*) message, CMD_BUTTON_A) == 0) {
+      setColorCyan();
       Serial.println("TOGGLE LED A");
       cptA = cptA++;
       delay(500);
+      ColorReset();
       
     } 
     
